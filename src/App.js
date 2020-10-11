@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import 'bulma/css/bulma.css';
 import { Switch, Route } from 'react-router-dom';
 import SearchTrackListContainer from './components/SearchTrackListContainer/SearchTrackListContainer';
