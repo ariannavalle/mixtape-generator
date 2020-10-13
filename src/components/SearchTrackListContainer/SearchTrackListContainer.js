@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import qs from 'qs';
 import Search from '../Search/Search'
@@ -91,6 +92,7 @@ export default class SearchTrackListContainer extends Component {
     render() {
         return (
             <>
+                <Link to={'/'}>Home</Link>
                 <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
                 <Tracklist recommendations={this.state.recommendations} />
             </>
