@@ -13,11 +13,6 @@ export default class SearchTrackListContainer extends Component {
         recommendations: [],
     }
 
-    auth = {
-        username: '',
-        password: ''
-    }
-
     componentDidMount = async () => {
 
         const headers = {
@@ -26,8 +21,8 @@ export default class SearchTrackListContainer extends Component {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             auth: {
-                username: this.auth.username,
-                password: this.auth.password,
+                username: process.env.REACT_APP_USERNAME,
+                password: process.env.REACT_APP_PASSWORD,
             },
         };
         const data = {
@@ -92,7 +87,7 @@ export default class SearchTrackListContainer extends Component {
     render() {
         return (
             <>
-                <Link to={'/'}>Home</Link>
+                <Link to={'/'}>Mixtape Generator</Link>
                 <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
                 <Tracklist recommendations={this.state.recommendations} />
             </>
