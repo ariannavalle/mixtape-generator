@@ -1,16 +1,16 @@
-body {
-    background: url('/images/landing.jpg');
+.home-body {
+	background: url('/images/landing.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%; 
-    display:flex;
+	background-repeat: no-repeat;
+	height: 100vh; 
+	display:flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 h1 {
     font-family: 'rockville_solidregular';
-    /* color: #3174dc; */
     color:white;
     text-align: center;
     font-size: 8rem;

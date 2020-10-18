@@ -4,6 +4,7 @@ import axios from 'axios';
 import qs from 'qs';
 import Search from '../Search/Search'
 import Tracklist from '../Tracklist/Tracklist'
+import './SearchTrackListContainer.css'
 
 export default class SearchTrackListContainer extends Component {
     state = {
@@ -86,11 +87,16 @@ export default class SearchTrackListContainer extends Component {
 
     render() {
         return (
-            <>
-                <Link to={'/'}>Mixtape Generator</Link>
-                <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
-                <Tracklist recommendations={this.state.recommendations} />
-            </>
+            <div className="search-tracklist-body">
+                <div><Link to={'/'} className="home-link">Mixtape Generator</Link><br/></div>
+                <div className="align-center">
+                <div className="search-tracklist-container">
+                    
+                    <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
+                    <Tracklist recommendations={this.state.recommendations} />
+                    </div>
+                    </div>
+            </div>
         )
     }
 }
