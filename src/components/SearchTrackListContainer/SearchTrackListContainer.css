@@ -1,8 +1,9 @@
 .search-tracklist-body {
-    background: url('/images/landing.jpg');
+    /* background: url('/images/landing.jpg'); */
+    background-color: #d85c61;
     background-size: cover;
 	background-repeat: no-repeat;
-    height: 100vh; 
+    height: 250vh; 
 }
 
 .align-center {
