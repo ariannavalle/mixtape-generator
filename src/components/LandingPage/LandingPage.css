@@ -1,44 +1,69 @@
 .home-body {
 	background: url('/images/landing.jpg');
-    background-size: cover;
+	background-size: cover;
 	background-repeat: no-repeat;
-	height: 100vh; 
-	display:flex;
-    justify-content: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	animation: animatedBackground 5s linear 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes animatedBackground {
+	from {
+		background-position: 50% 50%;
+	}
+	to {
+		background-position: 0 0;
+	}
+}
+
+@keyframes animatedBackgroundMobile {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 39% 50%;
+	}
 }
 
 h1 {
-    font-family: 'rockville_solidregular';
-    color:white;
-    text-align: center;
-    font-size: 8rem;
+	font-family: 'rockville_solidregular';
+	color: white;
+	text-align: center;
+	font-size: 14vh;
 }
 
 h2 {
-    font-family: "Courier New", Courier, monospace;
-    color: white;
-    text-align: center;
-    font-size: 2rem;
+	font-family: "Courier New", Courier, monospace;
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+}
+
+#str {
+	width: 43vw;
+	height: 50vh;
 }
 
 @font-face {
-    font-family: 'rockville_solidregular';
-    src: url('/fonts/rockville_solid-webfont.woff2') format('woff2'),
-         url('/fonts/rockville_solid-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'rockville_solidregular';
+	src: url('/fonts/rockville_solid-webfont.woff2') format('woff2'), url('/fonts/rockville_solid-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* button */
+
 div[class*=box] {
 	height: 33.33%;
-	width: 100%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
 }
 
 .btn {
@@ -49,15 +74,17 @@ div[class*=box] {
 	cursor: pointer;
 	color: #FFF;
 	transition: all 0.5s;
-	position: relative;	
+	position: relative;
 }
+
 .btn span {
-	z-index: 2;	
+	z-index: 2;
 	display: block;
 	position: absolute;
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 }
+
 .btn::before {
 	content: '';
 	position: absolute;
@@ -67,9 +94,10 @@ div[class*=box] {
 	height: 100%;
 	z-index: 1;
 	transition: all 0.5s;
-	border: 1px solid rgba(255,255,255,0.2);
-	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.1);
 }
+
 .btn::after {
 	content: '';
 	position: absolute;
@@ -79,15 +107,61 @@ div[class*=box] {
 	height: 100%;
 	z-index: 1;
 	transition: all 0.5s;
-	border: 1px solid rgba(255,255,255,0.2);
-	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.1);
 }
+
 .btn:hover::before {
-  transform: rotate(-45deg);
-  background-color: rgba(255,255,255,0);
+	transform: rotate(180deg) scale(1.2, 1.2);
+	background-color: rgba(255, 255, 255, 0);
 }
+
 .btn:hover::after {
-  transform: rotate(45deg);
-  background-color: rgba(255,255,255,0);
+	background-color: rgba(255, 255, 255, 0);
+	transform: rotate(180deg) scale(1.2, 1.2);
 }
+
 /* end button */
+
+@media only screen and (max-width: 1550px) {
+	.home-body {
+		animation: animatedBackgroundMobile 5s linear 1;
+		animation-fill-mode: forwards;
+	}
+	h1 {
+		font-size: 14vh;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	#str {
+		width: 58vw;
+		height: 50vh;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.home-body {
+		animation: animatedBackgroundMobile 5s linear 1;
+		animation-fill-mode: forwards;
+	}
+	h1 {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 1rem;
+		margin: 2rem;
+		position: fixed;
+		left: 40%;
+		top: 70%;
+		transform: translateX(-50%);
+	}
+	#str {
+		height: 60vh;
+		width: 50vw;
+		position: fixed;
+		left: 50%;
+		top: 10%;
+		transform: translateX(-50%);
+	}
+}
