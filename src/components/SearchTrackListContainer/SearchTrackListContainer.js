@@ -88,7 +88,7 @@ export default class SearchTrackListContainer extends Component {
     render() {
         return (
             <div className="search-tracklist-body">
-                <div><Link to={'/'} className="home-link">Mixtape Generator</Link><br/></div>
+                <div><Link to={'/'} className="home-link"><i style={{color:"white"}} className='fa fa-home'></i></Link><br/></div>
                 <div className="align-center">
                 <div className="search-tracklist-container">
                     
