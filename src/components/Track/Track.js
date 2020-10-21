@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MdPlayCircleFilled, MdPauseCircleOutline, MdErrorOutline, MdAddCircleOutline } from "react-icons/md";
+import { MdPlayCircleFilled, MdPauseCircleOutline, MdErrorOutline, MdAddCircle } from "react-icons/md";
 import './Track.css'
 
 export default class Track extends Component {
@@ -29,8 +29,8 @@ export default class Track extends Component {
 
             {audio ?
                 this.state.currentlyPlaying ?
-                    <MdPauseCircleOutline class="md-icon" id={id} style={{ color: "#5a0a6f" }} onClick={this.playAudio} />
-                    : <MdPlayCircleFilled class="md-icon" id={id} style={{ color: "#5a0a6f" }} onClick={this.playAudio} />
+                    <MdPauseCircleOutline class="md-icon" id={id} onClick={this.playAudio} />
+                    : <MdPlayCircleFilled class="md-icon" id={id} onClick={this.playAudio} />
                 :
                 <div class="tooltip">
                     <MdErrorOutline class="md-icon" style={{ color: "#ccc" }} />
@@ -38,7 +38,7 @@ export default class Track extends Component {
                 </div>
             }
 
-            <MdAddCircleOutline class="md-icon add" />
+            <MdAddCircle class="md-icon add" />
 
         </div>)
     }

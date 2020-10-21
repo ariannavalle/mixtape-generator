@@ -103,12 +103,12 @@
 }
 
 .md-icon {
-  color: #5a0a6f;
+  color:black;
   font-size: 3rem;
 }
 
 .md-icon:hover {
-  color: gray;
+  color:  #5a0a6f
 }
 
 .add {
