@@ -5,6 +5,7 @@ import qs from 'qs';
 import Search from '../Search/Search'
 import Tracklist from '../Tracklist/Tracklist'
 import './SearchTrackListContainer.css'
+import Mixtape from '../Mixtape/Mixtape';
 
 export default class SearchTrackListContainer extends Component {
     state = {
@@ -88,14 +89,17 @@ export default class SearchTrackListContainer extends Component {
     render() {
         return (
             <div className="search-tracklist-body">
-                <div><Link to={'/'} className="home-link"><i style={{color:"white"}} className='fa fa-home'></i></Link><br/></div>
+                <div><Link to={'/'} className="home-link"><i style={{ color: "white" }} className='fa fa-home'></i></Link><br /></div>
                 <div className="align-center">
-                <div className="search-tracklist-container">
-                    
-                    <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
-                    <Tracklist recommendations={this.state.recommendations} />
+                    <div className="search-tracklist-container">
+
+                        <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
+                        <div className="tracklist-columns">
+                        <Tracklist recommendations={this.state.recommendations} />
+                        {this.state.recommendations.length >=1 && <Mixtape/>}
+                        </div>
                     </div>
-                    </div>
+                </div>
             </div>
         )
     }

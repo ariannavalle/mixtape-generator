@@ -1,0 +1,118 @@
+.album-art {
+  width: 5rem;
+  height: 5rem;
+  box-shadow: 3px 0 3px 0 rgba(0, 0, 0, .4);
+  padding: 5px;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.25);
+  margin-right: 2rem;
+}
+
+.track-info {
+  margin: 2rem;
+  line-height: 1;
+}
+
+.track-title {
+  font-size: 2rem;
+  color: black;
+}
+
+.track-title:hover {
+  font-size: 2.1rem;
+  color: #5a0a6f;
+  text-shadow: 3px 3px 3px rgba(150, 150, 150, 1);
+}
+
+.track-artist {
+  font-size: 1rem;
+  color: #999
+}
+
+.audio-icons {
+  height: 4rem;
+}
+
+/* Tooltips */
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+
+.tooltip h3 {
+  margin: 12px 0;
+}
+
+.tooltip .top {
+  min-width: 170px;
+  max-width: 300px;
+  top: -5px;
+  left: -13%;
+  transform: translate(-30%, -100%);
+  padding: 5px 21px;
+  color: #ffffff;
+  background-color: black;
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.tooltip:hover .top {
+  display: block;
+}
+
+.tooltip .top i {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  margin-left: -15px;
+  width: 30px;
+  height: 15px;
+  overflow: hidden;
+}
+
+.tooltip .top i::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #009cdc;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* end tooltip */
+
+.track-layout {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.md-icon {
+  color: #5a0a6f;
+  font-size: 3rem;
+}
+
+.md-icon:hover {
+  color: gray;
+}
+
+.add {
+  margin-left: 2rem;
+}
+

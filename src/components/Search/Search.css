@@ -4,11 +4,6 @@
 	
 }
 
-.results-container {
-	background-color: white;
-	border-radius: 0 0 10px 10px;
-}
-
 .search-label {
 	position: relative;
 }
@@ -26,8 +21,12 @@
 }
 
 /* search results */
+.results-container {
+	background-color: white;
+	border-radius: 0 0 10px 10px;
+}
 .columns {
-	font-size: 2rem;
+	font-size: 3vh;
 	width: 100%;
 	margin: 0;
 	padding: 0;
