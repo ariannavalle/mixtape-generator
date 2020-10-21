@@ -13,6 +13,7 @@ export default class SearchTrackListContainer extends Component {
         results: {},
         trackIDs: [],
         recommendations: [],
+        mixtapeTracks: []
     }
 
     componentDidMount = async () => {
@@ -86,6 +87,13 @@ export default class SearchTrackListContainer extends Component {
         this.getrecommendations()
     }
 
+    addTrackToMixtape = async (track) => {
+        await this.setState({
+            mixtapeTracks: [...this.state.mixtapeTracks, track],
+        })
+        console.log(this.state.mixtapeTracks)
+    }
+
     render() {
         return (
             <div className="search-tracklist-body">
@@ -95,8 +103,8 @@ export default class SearchTrackListContainer extends Component {
 
                         <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
                         <div className="tracklist-columns">
-                        <Tracklist recommendations={this.state.recommendations} />
-                        {this.state.recommendations.length >=1 && <Mixtape/>}
+                            <Tracklist recommendations={this.state.recommendations} addTrackToMixtape={this.addTrackToMixtape} />
+                            {this.state.recommendations.length >= 1 && <Mixtape tracks={this.state.mixtapeTracks} />}
                         </div>
                     </div>
                 </div>

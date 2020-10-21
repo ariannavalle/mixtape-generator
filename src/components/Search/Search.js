@@ -11,7 +11,6 @@ export default class search extends Component {
         this.setState({
             selectedSongs: [...this.state.selectedSongs, songPicked]
         })
-        console.log(this.state.selectedSongs)
     }
 
     renderselectedSongs = () => {

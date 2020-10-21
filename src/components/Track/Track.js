@@ -19,7 +19,7 @@ export default class Track extends Component {
     }
 
     renderIcons = () => {
-        const { audio, id } = this.props;
+        const { audio, id, title, artist, addTrackToMixtape } = this.props;
 
         return (<div>
             <audio id="my-audio" >
@@ -29,16 +29,16 @@ export default class Track extends Component {
 
             {audio ?
                 this.state.currentlyPlaying ?
-                    <MdPauseCircleOutline class="md-icon" id={id} onClick={this.playAudio} />
-                    : <MdPlayCircleFilled class="md-icon" id={id} onClick={this.playAudio} />
+                    <MdPauseCircleOutline className="md-icon" id={id} onClick={this.playAudio} />
+                    : <MdPlayCircleFilled className="md-icon" id={id} onClick={this.playAudio} />
                 :
-                <div class="tooltip">
-                    <MdErrorOutline class="md-icon" style={{ color: "#ccc" }} />
-                    <div class="top">Preview unavailable</div>
+                <div className="tooltip">
+                    <MdErrorOutline className="md-icon" style={{ color: "#ccc" }} />
+                    <div className="top">Preview unavailable</div>
                 </div>
             }
 
-            <MdAddCircle class="md-icon add" />
+            <MdAddCircle className="md-icon add" onClick={() => addTrackToMixtape({ id, title, artist })} />
 
         </div>)
     }

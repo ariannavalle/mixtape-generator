@@ -4,13 +4,18 @@ import './Tracklist.css'
 
 export default class Tracklist extends Component {
 
+    state = {
+        mixtapeTracks: this.props.mixtapeTracks
+    }
+
+
     render() {
         const { recommendations } = this.props
         return (
             <div id="tracklist-container"  >
                 {recommendations.map((rec) => {
                     return <div key={rec.id}>
-                        <Track albumCover={rec.album.images[0].url} title={rec.name} artist={rec.artists[0].name} audio={rec.preview_url} id={rec.id} />
+                        <Track albumCover={rec.album.images[0].url} title={rec.name} artist={rec.artists[0].name} audio={rec.preview_url} id={rec.id} addTrackToMixtape={this.props.addTrackToMixtape } />
                     </div>
                 })
                 }
