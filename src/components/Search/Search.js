@@ -21,7 +21,7 @@ export default class search extends Component {
                     return (
                         <div key={result.id} className="chosen-items">
 
-                            <div><img className="album-image" src={result.album.images[0].url} alt={result.name} /></div>
+                            <img className="album-image" src={result.album.images[0].url} alt={result.name} />
 
                             <div>{result.name}</div>
 
