@@ -6,10 +6,22 @@ export default class Mixtape extends Component {
     render() {
 
         return (
-            <div id="mixtape">
-                {this.props.tracks.map((track) => {
-                    return <div>{track.title} - {track.artist}</div>
-                })}
+            <div>
+                <h4>Mixtape</h4>
+                <span>A list containing your favorite tracks</span>
+                <div id="mixtape"> 
+                    <div className="mixtape-heading">Side A</div>
+                    {this.props.tracks.map((track) => {
+                        return (
+                            <div className="mixtape-container">
+                                <div className="mixtape-track">
+                                    <div>{track.title}</div> 
+                                    <div>{track.artist}</div> 
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         )
     }
