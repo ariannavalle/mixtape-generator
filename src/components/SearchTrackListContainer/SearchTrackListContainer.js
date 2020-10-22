@@ -91,7 +91,6 @@ export default class SearchTrackListContainer extends Component {
         await this.setState({
             mixtapeTracks: [...this.state.mixtapeTracks, track],
         })
-        console.log(this.state.mixtapeTracks)
     }
 
     render() {

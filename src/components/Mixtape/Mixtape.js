@@ -11,9 +11,9 @@ export default class Mixtape extends Component {
                 <span>A list containing your favorite tracks</span>
                 <div id="mixtape"> 
                     <div className="mixtape-heading">Side A</div>
-                    {this.props.tracks.map((track) => {
+                    {this.props.tracks.map((track, i) => {
                         return (
-                            <div className="mixtape-container">
+                            <div key={i} className="mixtape-container">
                                 <div className="mixtape-track">
                                     <div>{track.title}</div> 
                                     <div>{track.artist}</div> 
