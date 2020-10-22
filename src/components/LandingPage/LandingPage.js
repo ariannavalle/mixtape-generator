@@ -22,7 +22,7 @@ export default class LandingPage extends Component {
                     <Link to={'/generator'}>
                         <div className="box-2">
                             <div className="btn btn">
-                                <span>START</span>
+                                <div>START</div>
                             </div>
                         </div>
                     </Link>
