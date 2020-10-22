@@ -17,7 +17,7 @@ export default class LandingPage extends Component {
     render() {
         return (
             <div className="home-body">
-                <h1 id="str"></h1>
+                <div id="str"></div>
                 <h2>Discover new music and create curated playlists.<br />
                     <Link to={'/generator'}>
                         <div className="box-2">

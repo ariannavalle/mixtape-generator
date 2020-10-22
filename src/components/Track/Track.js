@@ -50,7 +50,7 @@ export default class Track extends Component {
             <div className="track">
 
                 <div className="album-art">
-                    <img src={albumCover} className="cover" />
+                    <img src={albumCover} className="cover" alt="album cover"/>
                 </div>
 
                 <div className="track-layout">
