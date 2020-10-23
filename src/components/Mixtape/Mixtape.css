@@ -1,24 +1,29 @@
-#mixtape{
+#mixtape {
     width: 400px;
-    min-height:600px;
-    max-height:600px;
-    overflow:auto;
+    min-height: 600px;
+    max-height: 600px;
+    overflow: auto;
     background-color: white;
     opacity: .5;
 }
 
-.mixtape-container{
+.mixtape-container {
     margin: 1rem;
     border-bottom: 1px solid black;
 }
 
-.mixtape-heading{
+.mixtape-heading {
     margin: 1rem;
     font-size: 1.6rem;
-    border-bottom: 2px dotted black; 
+    border-bottom: 2px dotted black;
 }
 
-.mixtape-track{
+.mixtape-track {
     display: flex;
     justify-content: space-between;
 }
+
+.btn-space {
+    margin-left: 1rem;
+}
+
