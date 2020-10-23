@@ -60,7 +60,6 @@ export default class search extends Component {
 
     render() {
         return (
-            // render search box
             <>
                 <div className="container">
                     <h3>Search for songs to find your new favorite tunes.</h3>
