@@ -16,13 +16,17 @@ export default class Mixtape extends Component {
                         return (
                             <div key={i} className="mixtape-container">
                                 <div className="mixtape-track">
-                                    <div>{track.title}</div>
-                                    <div>{track.artist} <MdClear className="btn-space" onClick={() => { this.props.removeTrackFromMixtape(track) }} />
+                                <div>{track.title.length > 25 ? track.title.substring(0, 25) + "..." : track.title}</div>
+                                    <div>{track.artist.length > 18 ? track.artist.substring(0, 18) + "..." : track.artist} <MdClear className="btn-space" onClick={() => { this.props.removeTrackFromMixtape(track) }} />
                                     </div>
                                 </div>
                             </div>
                         )
                     })}
+                </div>
+
+                {/* looks cute, might delete later */}
+                <div className="cassette-tape">
                 </div>
             </div>
         )
