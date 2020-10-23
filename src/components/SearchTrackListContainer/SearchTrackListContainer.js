@@ -87,6 +87,13 @@ export default class SearchTrackListContainer extends Component {
         this.getrecommendations()
     }
 
+    removeFromSeedList = async (id) => {
+        let filteredArray = this.state.trackIDs.filter(trackID => trackID !== id)
+        this.setState({trackIDs: filteredArray});
+
+        this.getrecommendations()
+    }
+
     addTrackToMixtape = async (track) => {
         await this.setState({
             mixtapeTracks: [...this.state.mixtapeTracks, track],
@@ -100,7 +107,7 @@ export default class SearchTrackListContainer extends Component {
                 <div className="align-center">
                     <div className="search-tracklist-container">
 
-                        <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} />
+                        <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} removeFromSeedList={this.removeFromSeedList}/>
                         <div className="tracklist-columns">
                             <Tracklist recommendations={this.state.recommendations} addTrackToMixtape={this.addTrackToMixtape} />
                             {this.state.recommendations.length >= 1 && <Mixtape tracks={this.state.mixtapeTracks} />}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Search.css'
+import { MdClear } from "react-icons/md";
 
 export default class search extends Component {
 
@@ -7,13 +8,19 @@ export default class search extends Component {
         selectedSongs: []
     }
 
-    saveselectedSongs = (songPicked) => {
+    saveSelectedSongs = (songPicked) => {
         this.setState({
             selectedSongs: [...this.state.selectedSongs, songPicked]
         })
     }
 
-    renderselectedSongs = () => {
+    unsaveSelectedSongs = (songPicked) => {
+        let filteredArray = this.state.selectedSongs.filter(song => song !== songPicked)
+        this.setState({selectedSongs: filteredArray});
+    }
+
+    renderSelectedSongs = () => {
+        const { removeFromSeedList } = this.props;
         return (
             <div className="chosen-items-container">
                 {this.state.selectedSongs.map((result) => {
@@ -21,10 +28,9 @@ export default class search extends Component {
                         <div key={result.id} className="chosen-items">
 
                             <img className="album-image" src={result.album.images[0].url} alt={result.name} />
-
                             <div>{result.name}</div>
-
-
+                            <MdClear onClick={() => { removeFromSeedList(result.id); this.unsaveSelectedSongs(result) }}/>
+                    
                         </div>
                     );
                 })}
@@ -40,7 +46,7 @@ export default class search extends Component {
                 <div className="results-container">
                     {results.map((result) => {
                         return (
-                            <div key={result.id} onClick={() => { addToSeedList(result.id); this.saveselectedSongs(result) }} className="result-items">
+                            <div key={result.id} onClick={() => { addToSeedList(result.id); this.saveSelectedSongs(result) }} className="result-items">
                                 <div className="columns">
                                     <div className="column is-1">
                                         <img className="image" src={result.album.images[0].url} alt={result.name} />
@@ -77,7 +83,7 @@ export default class search extends Component {
                 </div>
 
                 {/* render user's selections */}
-                {this.renderselectedSongs()}
+                {this.renderSelectedSongs()}
             </>
         )
     }
