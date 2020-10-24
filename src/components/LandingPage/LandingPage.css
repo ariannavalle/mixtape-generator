@@ -33,7 +33,9 @@
 	font-family: 'rockville_solidregular';
 	color: white;
 	text-align: center;
-	font-size: 14vh;
+	font-size: 8rem;
+	width: 43vw;
+	height: 46vh;
 }
 
 h2 {
@@ -41,11 +43,6 @@ h2 {
 	color: white;
 	text-align: center;
 	font-size: 2rem;
-}
-
-#str {
-	width: 43vw;
-	height: 50vh;
 }
 
 @font-face {
@@ -129,39 +126,23 @@ div[class*=box] {
 		animation-fill-mode: forwards;
 	}
 	#str {
-		font-size: 14vh;
-	}
-	h2 {
-		font-size: 2rem;
-	}
-	#str {
-		width: 58vw;
-		height: 50vh;
+		font-size: 7rem;
+		width: 60vw;
+		height: auto;
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
 	.home-body {
 		animation: animatedBackgroundMobile 5s linear 1;
 		animation-fill-mode: forwards;
 	}
 	#str {
-		font-size: 4rem;
+		font-size: 5rem;
+		width: 100vw;
+		height: auto;
 	}
 	h2 {
-		font-size: 1rem;
-		margin: 2rem;
-		position: fixed;
-		left: 40%;
-		top: 70%;
-		transform: translateX(-50%);
-	}
-	#str {
-		height: 60vh;
-		width: 50vw;
-		position: fixed;
-		left: 50%;
-		top: 10%;
-		transform: translateX(-50%);
+		font-size: 1.5rem;
 	}
 }
