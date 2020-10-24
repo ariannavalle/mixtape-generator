@@ -1,10 +1,11 @@
 #mixtape {
     width: 400px;
-    min-height: 600px;
-    max-height: 600px;
+    min-height: 636px;
+    max-height: 636px;
     overflow: auto;
     background-color: white;
     opacity: .5;
+    border-radius: 10px;
 }
 
 .mixtape-container {
@@ -25,4 +26,23 @@
 
 .btn-space {
     margin-left: 1rem;
+}
+
+.record {
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: #5a0a6f;
+    color: white;
+    padding: 1rem;
+    margin: .5rem 0;
+    border-radius: 10px;
+}
+
+.record:hover {
+    background-color: #9748ab;
+}
+
+.msg {
+    margin-top: 1.2rem;
+    margin-bottom: .5rem;
 }

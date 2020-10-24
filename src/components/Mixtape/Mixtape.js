@@ -9,7 +9,7 @@ export default class Mixtape extends Component {
         return (
             <div>
                 <h4>Mixtape</h4>
-                <span>A list containing your favorite tracks</span>
+                <span>A list containing your favorite tracks.<br/> Click record when you're ready to listen!</span>
                 <div id="mixtape">
                     <div className="mixtape-heading">Side A</div>
                     {this.props.tracks.map((track, i) => {
@@ -24,6 +24,7 @@ export default class Mixtape extends Component {
                         )
                     })}
                 </div>
+                {this.props.tracks.length>1 && <div className="record" onClick={this.props.toggleBtnState}>Record Mixtape</div>}
             </div>
         )
     }

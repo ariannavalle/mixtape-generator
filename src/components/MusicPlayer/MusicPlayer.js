@@ -133,75 +133,78 @@ export default class MusicPlayer extends Component {
             index: key
         });
 
-        this.updatePlayer();
+        this.updatePlayer(key);
         if (pause) {
             this.playerRef.play();
         }
     }
 
-
     render() {
         const { index, currentTime, pause } = this.state;
-        console.log("props", this.props, index)
         const currentSong = this.props.tracks[index];
-        console.log('tracks', this.props.tracks[index])
-        return <div className="card">
-            <div className="current-song">
-                <audio ref={ref => this.playerRef = ref}>
-                    <source src={currentSong?.audio} type="audio/ogg" />
+        return <div style={{ display: "flex", flexDirection: "column" }}>
+            <h4>Mixtape</h4>
+            <span className="msg">You're all set! Listen to your unique creation.</span>
+
+            <div className="card">
+                <div className="current-song">
+                    <audio ref={ref => this.playerRef = ref}>
+                        <source src={currentSong?.audio} type="audio/ogg" />
                   Your browser does not support the audio element.
               </audio>
-                <div className="img-wrap">
-                    <img src={currentSong?.albumCover} />
+                    <div className="img-wrap">
+                        <img src={currentSong?.albumCover} />
+                    </div>
+                    <div className="song-name">{currentSong?.title}</div>
+                    <div className="song-autor">{currentSong?.artist}</div>
+
+                    <div className="time">
+                        <div className="current-time">{currentTime}</div>
+                        {/* <div className="end-time">{ currentSong?.duration }</div> */}
+                    </div>
+
+                    <div ref={ref => this.timelineRef = ref} id="timeline">
+                        <div ref={ref => this.playheadRef = ref} id="playhead"></div>
+                        <div ref={ref => this.hoverPlayheadRef = ref} class="hover-playhead" data-content="0:00"></div>
+                    </div>
+
+                    <div className="controls">
+                        <button onClick={this.prevSong} className="prev prev-next current-btn"><MdFastRewind /></button>
+
+                        <button onClick={this.playOrPause} className="play current-btn">
+                            {
+                                (!pause) ? <MdPlayArrow />
+                                    : <MdPause />
+                            }
+                        </button>
+                        <button onClick={this.nextSong} className="next prev-next current-btn"><MdFastForward /></button>
+                    </div>
+
                 </div>
-                <div className="song-name">{currentSong?.title}</div>
-                <div className="song-autor">{currentSong?.artist}</div>
+                <div className="play-list" >
+                    {this.props.tracks.map((music, key = 0) =>
+                        <div key={key}
+                            onClick={() => this.clickAudio(key)}
+                            className={"track-row " +
+                                (index === key && !pause ? 'current-audio' : '') +
+                                (index === key && pause ? 'play-now' : '')} >
 
-                <div className="time">
-                    <div className="current-time">{currentTime}</div>
-                    {/* <div className="end-time">{ currentSong?.duration }</div> */}
-                </div>
-
-                <div ref={ref => this.timelineRef = ref} id="timeline">
-                    <div ref={ref => this.playheadRef = ref} id="playhead"></div>
-                    <div ref={ref => this.hoverPlayheadRef = ref} class="hover-playhead" data-content="0:00"></div>
-                </div>
-
-                <div className="controls">
-                    <button onClick={this.prevSong} className="prev prev-next current-btn"><MdFastRewind /></button>
-
-                    <button onClick={this.playOrPause} className="play current-btn">
-                        {
-                            (!pause) ? <MdPlayArrow />
-                                : <MdPause />
-                        }
-                    </button>
-                    <button onClick={this.nextSong} className="next prev-next current-btn"><MdFastForward /></button>
-                </div>
-
-            </div>
-            <div className="play-list" >
-                {this.props.tracks.map((music, key = 0) =>
-                    <div key={key}
-                        onClick={() => this.clickAudio(key)}
-                        className={"track-row " +
-                            (index === key && !pause ? 'current-audio' : '') +
-                            (index === key && pause ? 'play-now' : '')} >
-
-                        <img className="track-img" src={music.albumCover} />
-                        <div className="track-discr" >
-                            <div className="track-name" >{music.title}</div>
-                            <div className="track-author" >{music.artist}</div>
-                        </div>
-                        {/* <div className="track-duration" >
+                            <img className="track-img" src={music.albumCover} />
+                            <div className="track-discr" >
+                                <div className="track-name" >{music.title}</div>
+                                <div className="track-author" >{music.artist}</div>
+                            </div>
+                            {/* <div className="track-duration" >
                                  {(index === key)
                                    ?currentTime
                                    :music.duration
                                  }
                                </div> */}
-                    </div>
-                )}
+                        </div>
+                    )}
+                </div>
             </div>
+            <div className="record" onClick={this.props.toggleBtnState}>Edit Mixtape</div>
         </div>
     }
 }

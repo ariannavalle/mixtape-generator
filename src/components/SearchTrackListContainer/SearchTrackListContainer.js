@@ -14,7 +14,8 @@ export default class SearchTrackListContainer extends Component {
         results: {},
         trackIDs: [],
         recommendations: [],
-        mixtapeTracks: []
+        mixtapeTracks: [],
+        displayRecordBtn: true,
     }
 
     componentDidMount = async () => {
@@ -108,6 +109,12 @@ export default class SearchTrackListContainer extends Component {
         await this.setState({mixtapeTracks: filteredArray});
     }
 
+    toggleBtnState = () => {
+        this.setState({
+            displayRecordBtn: !this.state.displayRecordBtn
+        })
+    }
+
     render() {
         return (
             <div className="search-tracklist-body">
@@ -118,7 +125,9 @@ export default class SearchTrackListContainer extends Component {
                         <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} removeFromSeedList={this.removeFromSeedList}/>
                         <div className="tracklist-columns">
                             <Tracklist recommendations={this.state.recommendations} addTrackToMixtape={this.addTrackToMixtape} />
-                            {this.state.recommendations.length >= 1 && <div style={{display:"flex",flexDirection:"column"}}><Mixtape tracks={this.state.mixtapeTracks} removeTrackFromMixtape={this.removeTrackFromMixtape} /> <MusicPlayer tracks={this.state.mixtapeTracks}/> </div>} 
+                            {this.state.recommendations.length >= 1 && (this.state.displayRecordBtn?
+                            <Mixtape tracks={this.state.mixtapeTracks} removeTrackFromMixtape={this.removeTrackFromMixtape} toggleBtnState={this.toggleBtnState}/> :
+                            <MusicPlayer tracks={this.state.mixtapeTracks} toggleBtnState={this.toggleBtnState}/> )} 
                         </div>
                     </div>
                 </div>
