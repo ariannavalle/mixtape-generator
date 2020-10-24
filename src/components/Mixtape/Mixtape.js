@@ -24,10 +24,6 @@ export default class Mixtape extends Component {
                         )
                     })}
                 </div>
-
-                {/* looks cute, might delete later */}
-                <div className="cassette-tape">
-                </div>
             </div>
         )
     }

@@ -26,15 +26,3 @@
 .btn-space {
     margin-left: 1rem;
 }
-
-/* looks cute, might delete later */
-.cassette-tape {
-    /* width: 420px; */
-    min-height: 420px;
-    max-height: 600px;
-    overflow: auto;
-    background: url('/images/download.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-radius: 5%;
-}

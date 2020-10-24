@@ -19,7 +19,8 @@ export default class Track extends Component {
     }
 
     renderIcons = () => {
-        const { audio, id, title, artist, addTrackToMixtape } = this.props;
+        const { audio, id, addTrackToMixtape } = this.props;
+        console.log(this.props)
 
         return (<div>
             <audio id="my-audio" >
@@ -38,7 +39,7 @@ export default class Track extends Component {
                 </div>
             }
 
-            <MdAddCircle className="md-icon add" onClick={() => addTrackToMixtape({ id, title, artist })} />
+            <MdAddCircle className="md-icon add" onClick={() => addTrackToMixtape(this.props)} />
 
         </div>)
     }

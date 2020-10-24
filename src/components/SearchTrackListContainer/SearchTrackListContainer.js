@@ -6,6 +6,7 @@ import Search from '../Search/Search'
 import Tracklist from '../Tracklist/Tracklist'
 import './SearchTrackListContainer.css'
 import Mixtape from '../Mixtape/Mixtape';
+import MusicPlayer from '../MusicPlayer/MusicPlayer'
 
 export default class SearchTrackListContainer extends Component {
     state = {
@@ -70,7 +71,7 @@ export default class SearchTrackListContainer extends Component {
             }
         }).then((recs) => {
             this.setState({
-                recommendations: recs.data.tracks,
+                recommendations: recs.data.tracks.filter(t  => t.preview_url),
             })
         }).catch((error) => {
             console.log('Failed to get recommendations.')
@@ -84,6 +85,8 @@ export default class SearchTrackListContainer extends Component {
             // this will close the search dropdown once the user makes a choice
             results: {},
         })
+
+        document.querySelector('#search-input').value = ""
         this.getrecommendations()
     }
 
@@ -115,7 +118,7 @@ export default class SearchTrackListContainer extends Component {
                         <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} removeFromSeedList={this.removeFromSeedList}/>
                         <div className="tracklist-columns">
                             <Tracklist recommendations={this.state.recommendations} addTrackToMixtape={this.addTrackToMixtape} />
-                            {this.state.recommendations.length >= 1 && <Mixtape tracks={this.state.mixtapeTracks} removeTrackFromMixtape={this.removeTrackFromMixtape} /> }
+                            {this.state.recommendations.length >= 1 && <div style={{display:"flex",flexDirection:"column"}}><Mixtape tracks={this.state.mixtapeTracks} removeTrackFromMixtape={this.removeTrackFromMixtape} /> <MusicPlayer tracks={this.state.mixtapeTracks}/> </div>} 
                         </div>
                     </div>
                 </div>
