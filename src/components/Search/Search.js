@@ -16,7 +16,7 @@ export default class search extends Component {
 
     unsaveSelectedSongs = (songPicked) => {
         let filteredArray = this.state.selectedSongs.filter(song => song !== songPicked)
-        this.setState({selectedSongs: filteredArray});
+        this.setState({ selectedSongs: filteredArray });
     }
 
     renderSelectedSongs = () => {
@@ -29,8 +29,8 @@ export default class search extends Component {
 
                             <img className="album-image" src={result.album.images[0].url} alt={result.name} />
                             <div>{result.name}</div>
-                            <MdClear onClick={() => { removeFromSeedList(result.id); this.unsaveSelectedSongs(result) }}/>
-                    
+                            <MdClear onClick={() => { removeFromSeedList(result.id); this.unsaveSelectedSongs(result) }} />
+
                         </div>
                     );
                 })}
@@ -47,14 +47,8 @@ export default class search extends Component {
                     {results.map((result) => {
                         return (
                             <div key={result.id} onClick={() => { addToSeedList(result.id); this.saveSelectedSongs(result) }} className="result-items">
-                                <div className="columns">
-                                    <div className="column is-1">
-                                        <img className="image" src={result.album.images[0].url} alt={result.name} />
-                                    </div>
-                                    <div className="column">
-                                        {result.name}
-                                    </div>
-                                </div>
+                                <img className="image" src={result.album.images[0].url} alt={result.name} />
+                                {result.name}
                             </div>
                         );
                     })}
