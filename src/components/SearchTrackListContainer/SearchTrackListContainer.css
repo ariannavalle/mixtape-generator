@@ -37,6 +37,10 @@
     margin: 1rem;
 }
 
+#github-icon img {
+    border-radius: 3px;
+}
+
 @media only screen and (max-width: 1400px) {
     .search-tracklist-body {
         animation: animatedBackgroundMobile 5s linear 1;
@@ -74,9 +78,16 @@
     .md-icon:active {
         color: #5a0a6f
     }
+    #linkedin-icon {
+        display: none;
+    }
+    #github-icon {
+        display: none;
+    }
 }
 
 /* don't include hovers effects on mobile */
+
 @media only screen and (min-width: 750px) {
     .record:hover {
         background-color: #9748ab;
@@ -88,19 +99,20 @@
     .md-icon:hover {
         color: #5a0a6f
     }
-    .btn:hover::before {
-        transform: rotate(180deg) scale(1.2, 1.2);
-        background-color: rgba(255, 255, 255, 0);
-    }
-    
-    .btn:hover::after {
-        background-color: rgba(255, 255, 255, 0);
-        transform: rotate(180deg) scale(1.2, 1.2);
-    }
     .card {
         width: 400px;
     }
     #mixtape {
         width: 400px;
+    }
+    #linkedin-icon {
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+    }
+    #github-icon {
+        position: absolute;
+        bottom: 8px;
+        right: 42px;
     }
 }

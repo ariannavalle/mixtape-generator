@@ -72,7 +72,7 @@ export default class SearchTrackListContainer extends Component {
             }
         }).then((recs) => {
             this.setState({
-                recommendations: recs.data.tracks.filter(t  => t.preview_url),
+                recommendations: recs.data.tracks.filter(t => t.preview_url),
             })
         }).catch((error) => {
             console.log('Failed to get recommendations.')
@@ -93,7 +93,7 @@ export default class SearchTrackListContainer extends Component {
 
     removeFromSeedList = async (id) => {
         let filteredArray = this.state.trackIDs.filter(trackID => trackID !== id)
-        this.setState({trackIDs: filteredArray});
+        this.setState({ trackIDs: filteredArray });
 
         this.getrecommendations()
     }
@@ -106,7 +106,7 @@ export default class SearchTrackListContainer extends Component {
 
     removeTrackFromMixtape = async (track) => {
         let filteredArray = this.state.mixtapeTracks.filter(mixtapeTrack => mixtapeTrack !== track)
-        await this.setState({mixtapeTracks: filteredArray});
+        await this.setState({ mixtapeTracks: filteredArray });
     }
 
     toggleBtnState = () => {
@@ -122,14 +122,22 @@ export default class SearchTrackListContainer extends Component {
                 <div className="align-center">
                     <div className="search-tracklist-container">
 
-                        <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} removeFromSeedList={this.removeFromSeedList}/>
+                        <Search onChange={this.onChange} results={this.state.results} addToSeedList={this.addToSeedList} removeFromSeedList={this.removeFromSeedList} />
                         <div className="tracklist-columns">
                             <Tracklist recommendations={this.state.recommendations} addTrackToMixtape={this.addTrackToMixtape} />
-                            {this.state.recommendations.length >= 1 && (this.state.displayRecordBtn?
-                            <Mixtape tracks={this.state.mixtapeTracks} removeTrackFromMixtape={this.removeTrackFromMixtape} toggleBtnState={this.toggleBtnState}/> :
-                            <MusicPlayer tracks={this.state.mixtapeTracks} toggleBtnState={this.toggleBtnState}/> )} 
+                            {this.state.recommendations.length >= 1 && (this.state.displayRecordBtn ?
+                                <Mixtape tracks={this.state.mixtapeTracks} removeTrackFromMixtape={this.removeTrackFromMixtape} toggleBtnState={this.toggleBtnState} /> :
+                                <MusicPlayer tracks={this.state.mixtapeTracks} toggleBtnState={this.toggleBtnState} />)}
                         </div>
                     </div>
+                </div>
+                <div className="contact-icons" >
+                    <a href="https://www.linkedin.com/in/ariannavalle/" id="linkedin-icon">
+                        <img src="./images/linkedin-icon.png" alt="Arianna's LinkedIn" width="30px" height="30px" />
+                    </a>
+                    <a href="https://github.com/ariannavalle" id="github-icon">
+                        <img src="./images/github-icon.png" alt="Arianna's Github" width="30x" height="30px" />
+                    </a>
                 </div>
             </div>
         )
