@@ -65,7 +65,33 @@
     .track-artist {
         font-size: .7rem;
     }
+    .album-art {
+        height: 4rem;
+    }
     .md-icon {
         font-size: 1.5rem;
+    }
+    .md-icon:active {
+        color: #5a0a6f
+    }
+}
+
+/* don't include hovers effects on mobile */
+@media only screen and (min-width: 750px) {
+    .record:hover {
+        background-color: #9748ab;
+    }
+    .track-title:hover {
+        font-size: 2.1rem;
+        color: #5a0a6f;
+    }
+    .md-icon:hover {
+        color: #5a0a6f
+    }
+    .card {
+        width: 400px;
+    }
+    #mixtape {
+        width: 400px;
     }
 }

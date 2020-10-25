@@ -1,5 +1,4 @@
 #mixtape {
-    width: 400px;
     min-height: 636px;
     max-height: 636px;
     overflow: auto;
@@ -36,10 +35,6 @@
     padding: 1rem;
     margin: .5rem 0;
     border-radius: 10px;
-}
-
-.record:hover {
-    background-color: #9748ab;
 }
 
 .msg {
