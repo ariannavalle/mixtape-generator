@@ -31,6 +31,10 @@
   height: 4rem;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 /* Tooltips */
 
 .tooltip {

@@ -22,7 +22,7 @@ export default class Track extends Component {
         const { audio, id, addTrackToMixtape } = this.props;
         console.log(this.props)
 
-        return (<div>
+        return (<div className="nowrap">
             <audio id="my-audio" >
                 <source src={audio} type="audio/mpeg" />
                 Your browser does not support the audio element.
