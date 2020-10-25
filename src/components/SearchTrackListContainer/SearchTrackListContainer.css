@@ -88,19 +88,6 @@
     .md-icon:hover {
         color: #5a0a6f
     }
-    .btn:hover::before {
-        transform: rotate(180deg) scale(1.2, 1.2);
-        background-color: rgba(255, 255, 255, 0);
-    }
-    
-    .btn:hover::after {
-        background-color: rgba(255, 255, 255, 0);
-        transform: rotate(180deg) scale(1.2, 1.2);
-    }
-    button:hover{
-        left: 0;
-        box-shadow: 0px 0px 15px 0px  rgba( #655c65, .7);;
-      }
     .card {
         width: 400px;
     }
