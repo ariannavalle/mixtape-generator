@@ -179,8 +179,7 @@ $transition: .3s all ease;
         border: 1px solid transparent;
         transition: 0.3s;
         cursor: pointer;
-        position:relative;
-        overflow: none;
+        min-height: 6rem;
         &:hover{
           background: $current-color;
           border-color: $current-color;
