@@ -21,7 +21,7 @@ export default class LandingPage extends Component {
                 <h2>Discover new music and create curated playlists.<br />
                     <Link to={'/generator'}>
                         <div className="box-2">
-                            <div className="btn btn">
+                            <div className="btn">
                                 <div>START</div>
                             </div>
                         </div>
