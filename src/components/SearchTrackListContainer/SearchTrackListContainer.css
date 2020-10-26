@@ -99,6 +99,10 @@
     .md-icon:hover {
         color: #5a0a6f
     }
+    button:hover{
+        left: 0;
+        box-shadow: 0px 0px 15px 0px  rgba( #655c65, .7);;
+      }
     .card {
         width: 400px;
     }
