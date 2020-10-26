@@ -179,6 +179,8 @@ $transition: .3s all ease;
         border: 1px solid transparent;
         transition: 0.3s;
         cursor: pointer;
+        position:relative;
+        overflow: none;
         &:hover{
           background: $current-color;
           border-color: $current-color;
@@ -187,9 +189,6 @@ $transition: .3s all ease;
         &.current-audio{
           background: $current-color;
           box-shadow: 0px 0px 15px 0px $current-color;
-          position:relative;
-          display:block;
-          overflow: none
         }
         &.play-now{
           background: $current-color;
